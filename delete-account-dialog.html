@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <!-- Modal -->
+    <div id="deleteAccountModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div class="bg-white w-full sm:w-[90%] md:w-[70%] lg:w-[40%] xl:w-[30%] rounded-lg p-6 border border-gray-300 shadow-lg text-center">
+            <!-- Icon -->
+            <div class="icon-section mb-4">
+                <img src="https://via.placeholder.com/100" alt="User Icon" class="mx-auto">
+                <span class="text-red-500 text-3xl font-bold">&#x2716;</span>
+            </div>
+            
+            <!-- Title -->
+            <h2 class="text-lg font-bold text-black mb-4">Delete Account?</h2>
+
+            <!-- Description -->
+            <p class="text-sm text-gray-600 mb-6">You are about to delete your account. All your saved information will be lost permanently.</p>
+
+            <!-- Buttons -->
+            <div class="flex justify-between">
+                <button class="w-[153px] h-[39px] bg-[#3d5fac] text-white rounded-lg border border-gray-400" onclick="closeModal()">Cancel</button>
+                <button class="w-[152px] h-[38px] bg-[#f7941d] text-white rounded-lg border border-gray-400">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Automatically open the modal when the page loads
+        window.onload = function() {
+            openModal();
+        };
+
+        function openModal() {
+            document.getElementById("deleteAccountModal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("deleteAccountModal").classList.add("hidden");
+        }
+    </script>
+    
+</body>
+</html>

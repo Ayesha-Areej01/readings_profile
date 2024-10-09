@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <!-- Modal -->
+    <div id="profileModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div class="bg-white w-full max-w-[491px] h-auto rounded-[16px] border border-gray-300 shadow-lg mx-4 sm:mx-6 md:mx-0">
+            
+            <!-- Title Bar with Back and Close Buttons -->
+            <div class="w-full h-[61px] rounded-t-[16px] bg-white border-b border-gray-300 flex items-center justify-between px-4">
+                <!-- Back Button (Left) -->
+                <button class="text-black opacity-[0.502]" onclick="closeModal()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <!-- Title -->
+                <h2 class="text-[20px] leading-[25px] text-[#3d5fac] font-bold font-arial">Edit Profile</h2>
+                
+                <!-- Close Button (Right) -->
+                <button class="text-black opacity-[0.502]" onclick="closeModal()">&times;</button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-4 sm:p-6">
+                <!-- Description -->
+                <p class="text-[16px] leading-[21px] text-[#000000] font-arial mb-4">
+                    You can edit your name and phone number below. You will need to enter your password to confirm.
+                </p>
+
+                <!-- Input Fields -->
+                <div class="space-y-4">
+                    <!-- Name Input -->
+                    <div class="w-full h-[41px] bg-white border border-gray-400 rounded-[7px]">
+                        <input type="text" placeholder="Name" class="w-full p-2 text-left text-[13px] leading-[16px] text-[#666666] font-arial bg-transparent focus:outline-none">
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="w-full h-[41px] bg-white border border-gray-400 rounded-[7px]">
+                        <input type="email" placeholder="Email" class="w-full p-2 text-left text-[13px] leading-[16px] text-[#666666] font-arial bg-transparent focus:outline-none">
+                    </div>
+
+                    <!-- Phone Number Input with Flag -->
+                    <div class="w-full h-[41px] bg-white border border-gray-400 rounded-[7px] flex items-center p-2">
+                        <span class="inline-block pr-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/32px-Flag_of_Pakistan.svg.png" alt="flag" class="w-5 h-auto"></span>
+                        <input type="text" placeholder="+92 345 123 456 7" class="w-full text-left text-[13px] leading-[16px] text-[#666666] font-arial bg-transparent focus:outline-none">
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="w-full h-[41px] bg-white border border-gray-400 rounded-[7px]">
+                        <input type="password" placeholder="Password" class="w-full p-2 text-left text-[13px] leading-[16px] text-[#666666] font-arial bg-transparent focus:outline-none">
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="mt-6 text-center">
+                    <button class="w-full max-w-[424px] h-[39px] bg-[#3d5fac] text-[18px] leading-[25px] text-[#ffffff] font-bold font-arial rounded-[7px]">
+                        Save Info
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Automatically open the modal when the page loads
+        window.onload = function() {
+            openModal();
+        };
+
+        function openModal() {
+            document.getElementById("profileModal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("profileModal").classList.add("hidden");
+        }
+    </script>
+
+</body>
+</html>

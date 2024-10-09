@@ -56,30 +56,61 @@ h1 {
   background-color: #ffffff;
 }
 
-.btn {
-  font-size: 14px;
-  line-height: 25px;
-  color: #3d5fac;
-  font-weight: bold;
-  font-family: "Arial";
-  width: 262px;
-  border-radius: 7px;
-  background-color: #f7f7f7;
-  border: 0.5px solid #808080;
-  white-space: normal;
+/* Container to hold the buttons */
+.button-container {
+  display: flex; /* Flexbox to align buttons in a row */
+  gap: 10px; /* Add space between the buttons */
+  justify-content: center; /* Center buttons in the container */
 }
 
-.btn-1 {
+/* General Button Style */
+.btn, .btn-1 {
   width: 262px;
-  border-radius: 7px;
-  background-color: #f7f7f7;
+height: 39px;
+background-color: #f7f7f7;
+  display: inline-flex; /* Flex to center text */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  width: 100%; /* Make buttons responsive */
+  max-width: 200px; /* Set a max width */
+  padding: 10px 15px; /* Padding for inner spacing */
+  border-radius: 7px; /* Rounded corners */
   border: 0.5px solid #808080;
   font-size: 14px;
   line-height: 25px;
+  text-align: center;
+  font-family: "Arial";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Button with blue text */
+.btn {
+  background-color: #f7f7f7;
+  color: #3d5fac;
+  font-weight: bold;
+}
+
+/* Button with orange text */
+.btn-1 {
+  background-color: #f7f7f7;
   color: #f7941d;
   font-weight: bold;
-  font-family: "Arial";
 }
+
+/* Responsive behavior */
+@media (max-width: 640px) {
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+  }
+
+  .btn, .btn-1 {
+    width: 100%; /* Make buttons full width on small screens */
+    max-width: none; /* Remove max-width */
+  }
+}
+
 
 .saves-addresses {
   margin-bottom: 25px; /* Spacing between sections */
@@ -144,7 +175,7 @@ h3 {
 }
 
 .add-btn {
-  width: 261px;
+  width: 230px;
   height: 39px;
   border-radius: 7px;
   background-color: #f7f7f7;
@@ -237,9 +268,9 @@ input[type="radio"]:checked + label:after {
   margin-top: 20px;
   cursor: pointer;
 }
-.full-width-hr{
-    border: 1px solid #ccc;
-    margin: 10px -40px 40px;
+.full-width-hr {
+  border: 1px solid #ccc;
+  margin: 10px -40px 40px;
 }
 /* Media query for small screens */
 @media (max-width: 600px) {
@@ -274,7 +305,7 @@ input[type="radio"]:checked + label:after {
 }
 
 @media (max-width: 640px) {
-    .full-width-hr {
-        margin: 20px -30px ; /* Adjust margin for small devices */
-    }
+  .full-width-hr {
+    margin: 20px -30px; /* Adjust margin for small devices */
+  }
 }
